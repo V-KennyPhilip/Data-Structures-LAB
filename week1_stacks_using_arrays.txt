@@ -1,0 +1,74 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+# define size 3 
+int stack[3],top=-1,item,del;
+void push();
+int pop();
+void display();
+void main()
+{
+    int choice;
+    while(1)
+    {
+        printf("\n1:push 2:pop 3:display 4:exit\n");
+        printf("Enter your choice:");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+            case 1:push();
+            break;
+            case 2:pop();
+            break;
+            case 3:display();
+            break;
+            case 4:exit(0);
+            break;
+            default :printf("wrong choice\n");
+        }
+    }
+}
+void push()
+{
+    if(top==(size-1))
+    {
+        printf("stack is full");
+    }
+    else 
+    {
+        printf("enter the item:");
+        scanf("%d",&item);
+        top=top+1;
+        stack[top]=item;
+    }
+}
+
+int pop()
+{
+    if(top==-1)
+    {
+        printf("stack is empty\n");
+    }
+    else
+    {
+        del=stack[top];
+        top=top-1;
+        printf("popped element is %d",del);
+    }
+    
+}
+void display()
+{
+    int i;
+    if(top==-1)
+    {
+        printf("stack is full\n");
+    }
+    else
+    printf("\nstack elements are:");
+        for(i=top;i>=0;i--)
+        {
+          printf("%d\t",stack[i]);
+        }
+    
+}
