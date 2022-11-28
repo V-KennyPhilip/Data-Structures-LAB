@@ -62,7 +62,7 @@ void display()
     int i;
     if(top==-1)
     {
-        printf("stack is full\n");
+        printf("stack is empty\n");
     }
     else
     printf("\nstack elements are:");
