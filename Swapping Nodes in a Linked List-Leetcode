@@ -1,0 +1,28 @@
+struct ListNode* swapNodes(struct ListNode* head, int k){
+
+    struct ListNode* pointer1 = head;
+    struct ListNode* pointer2 = head;
+
+    int size=0;
+    
+    int x=1;
+     while(x<k)
+     {
+    pointer2=pointer2->next;
+     x++;
+     }
+    while(pointer1)
+    {
+    pointer1=pointer1->next; 
+    size++;
+    }
+    pointer1=head;
+    for(int i=1;i<=(size-k);i++){
+        pointer1=pointer1->next;
+    }
+        int c = pointer1->val; 
+        pointer1->val= pointer2->val;
+        pointer2->val= c;
+    
+return head;
+}
